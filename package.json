@@ -1,0 +1,21 @@
+{
+    "name": "nodejs",
+    "version": "1.0.0",
+    "description": "learning",
+    "main": "test.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+
+        "start": "node ./lessons/process.js"
+    },
+    "author": "me",
+    "license": "GPL-2.0-only",
+    "dependencies": {
+        "cross-env": "^7.0.3",
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.18"
+    }
+}
