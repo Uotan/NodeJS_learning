@@ -1,8 +1,18 @@
+const { Console } = require('console')
 const fs = require('fs')
 const path = require('path')
+
+
+
+
+
+
+//unlink не работает чет, потом разберемся
 // if(fs.existsSync(path.resolve(__dirname,'testdir'))){
 //     console.log('directory exists')
-//     fs.unlink(path.resolve(__dirname,'testdir')
+//     fs.unlink(path.resolve(__dirname,'testdir'),(err)=>{
+//         console.log(err);
+//     })
 // }
 // else{
 //     fs.mkdirSync(path.resolve(__dirname,'testdir'))
@@ -11,27 +21,27 @@ const path = require('path')
 
 
 
-console.log('start')
+//console.log('start')
 
 //создать папку синхронно
 //fs.mkdirSync(path.resolve(__dirname,'testdir','dir_little'),{recursive: true} )
 
-fs.rmdir(path.resolve(__dirname,'testdir'), (err)=>{
-if(err){
-    throw err;
-}
-else{
-    console.log('директория удалена');
-}
-})
+
+//удалить каталог рекурсивноыыы
+// fs.rm(path.resolve(__dirname,'testdir'),{recursive: true}, (err)=>{
+// if(err){
+//     throw err;
+// }
+// else{
+//     console.log('директория удалена');
+// }
+// })
 
 
 
 
-
-
-//создать папку ассинхронно
-// fs.mkdir(path.resolve(__dirname,'testdir'), (err)=>{
+// //создать папку ассинхронно
+// fs.mkdir(path.resolve(__dirname,'testdir','little'),{recursive: true}, (err)=>{
 // if(err!=null){
 //     //console.log(err);
 //     console.log('ошибка =(');
@@ -41,6 +51,15 @@ else{
 //     console.log('ошибок нет');
 // }
 // } )
-//выполнится асинхронно
+// //выполнится асинхронно
 
-console.log('end')
+//console.log('end')
+
+
+
+fs.writeFile(path.resolve(__dirname,'test.txt'),'test string 123\nqwerty\tbig space',(err)=>{
+    if(err){
+        throw err;
+    }
+    console.log('Файл записан');
+})
