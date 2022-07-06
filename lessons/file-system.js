@@ -1,10 +1,15 @@
 const { Console } = require('console')
 const fs = require('fs')
 const path = require('path')
+const fsPromise = require('fs/promises');
 
 
-
-
+fsPromise.mkdir('/').then().catch();
+fsPromise.readFile('/').then().catch();
+fsPromise.writeFile('/').then().catch();
+fsPromise.appendFile('/').then().catch();
+fsPromise.rm('/').then().catch();
+fsPromise.rmdir('/').then().catch();
 
 
 //unlink не работает чет, потом разберемся
@@ -57,9 +62,17 @@ const path = require('path')
 
 
 
-fs.writeFile(path.resolve(__dirname,'test.txt'),'test string 123\nqwerty\tbig space',(err)=>{
-    if(err){
+fs.writeFile(path.resolve(__dirname, 'test.txt'), 'test string 123\nqwerty\tbig space', (err) => {
+    if (err) {
         throw err;
     }
     console.log('Файл записан');
+})
+
+
+fs.appendFile(path.resolve(__dirname, 'test.txt'), '\nappended text', (err) => {
+    if (err) {
+        throw err;
+    }
+    console.log('Файл дозаписан');
 })
