@@ -1,3 +1,0 @@
-test string 123
-qwerty	big space
-appended text

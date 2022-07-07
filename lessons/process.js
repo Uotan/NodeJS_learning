@@ -12,8 +12,8 @@
 // "start": "cross-env PORT=5000 NODE_ENV=production node ./lessons/process.js",
 
 
-//console.log(process.env.PORT);
-//console.log(process.env.NODE_ENV);
+console.log(process.env.PORT);
+console.log(process.env.NODE_ENV);
 
 //console.log(process.argv);
 
